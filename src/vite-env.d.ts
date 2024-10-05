@@ -6,3 +6,5 @@
 // "homepage": "https://AndriiLivin.github.io/skipper-v3",
 // "deploy": "yarn build && gh-pages -d dist"
 // base: "/skipper-v3",
+
+// "noImplicitAny": false
