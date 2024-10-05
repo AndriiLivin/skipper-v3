@@ -1,0 +1,46 @@
+#recomendations {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+
+  background-color: #f7f7f7;
+
+  & > * {
+    padding: 0 0.5rem;
+  }
+
+  & h1 {
+    text-align: center;
+
+    margin: 0;
+    padding: 0.3rem 0rem 0.5rem 0rem;
+
+    width: 100%;
+
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1;
+  }
+  @media (width< 768px) {
+    width: 100%;
+  }
+}
+
+#recomendations-detail-stock {
+  display: flex;
+
+  flex-direction: column;
+  // overflow: auto;
+
+  padding: 0rem 1rem;
+  width: 55%;
+  background-color: rgb(134, 158, 47);
+  &.loading {
+    opacity: 0.25;
+    transition: opacity 100ms;
+    transition-delay: 100ms;
+  }
+  @media (width< 768px) {
+    width: 100%;
+  }
+}

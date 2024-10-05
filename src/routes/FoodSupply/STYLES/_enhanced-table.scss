@@ -1,0 +1,92 @@
+// #enhanced-table #search-spinner {
+//   width: 1rem;
+//   height: 1rem;
+//   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'%3E%3Cpath stroke='%23000' strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M20 4v5h-.582m0 0a8.001 8.001 0 00-15.356 2m15.356-2H15M4 20v-5h.581m0 0a8.003 8.003 0 0015.357-2M4.581 15H9' /%3E%3C/svg%3E");
+//   animation: spin 1s infinite linear;
+//   position: absolute;
+//   left: 4.125rem;
+//   top: 1.55rem;
+// }
+
+// @keyframes spin {
+//   from {
+//     transform: rotate(0deg);
+//   }
+//   to {
+//     transform: rotate(360deg);
+//   }
+// }
+
+#enhanced-table {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow: auto;
+
+  & #microphone {
+    background-color: rgb(240, 240, 240);
+  }
+
+  & #table-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightgrey;
+
+    & > div > div {
+      padding: 0;
+    }
+
+    & form {
+      width: 100%;
+      padding-top: 0;
+    }
+  }
+
+  & form {
+    position: relative;
+    padding: 0.5rem;
+    & .mic-input input[type="search"] {
+      width: 100%;
+      padding-left: 2rem;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='%23999' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z' /%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: 0.625rem 0.75rem;
+      background-size: 1rem;
+      // position: relative;
+    }
+    & .mic-input.loading input[type="search"] {
+      background-image: none;
+    }
+  }
+
+  & tbody {
+    flex: 1;
+    overflow: auto;
+    margin: 0.3rem 0.5rem 0px 0.5rem;
+  }
+
+  & a {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    overflow: hidden;
+    flex-grow: 1;
+
+    padding: 0 0.5rem 0 0.5rem;
+    border-radius: 8px;
+    color: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+
+    &:hover {
+      background: #e3e3e3;
+    }
+
+    &.active {
+      background: hsl(214, 75%, 54%);
+      color: white;
+    }
+  }
+}

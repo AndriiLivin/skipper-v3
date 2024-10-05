@@ -1,0 +1,42 @@
+#product-recomendations-table {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+ 
+  overflow: auto;
+
+      @media (width< 768px) {
+
+  }
+
+  & #table-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightgrey;
+
+    & > div > div {
+      padding: 0;
+    }
+  }
+
+  & a {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    overflow: hidden;
+    flex-grow: 1;
+
+    padding: 0 0.5rem 0 0.5rem;
+    border-radius: 8px;
+    color: inherit;
+    font-size: 1rem;
+
+    font-weight: 500;
+    text-decoration: none;
+
+    &:hover {
+      background: #e3e3e3;
+    }
+  }
+}

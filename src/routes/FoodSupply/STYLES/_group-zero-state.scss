@@ -1,0 +1,183 @@
+#group-zero-state {
+  margin: 2rem auto;
+  text-align: center;
+  color: red;
+  & a {
+    color: lightblue;
+    &:hover {
+      color: #121212;
+    }
+  }
+
+  .result {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 5px 10px;
+    width: 65%;
+    // gap: 20px;
+    background-color: rgb(241, 200, 13);
+    // background-color: white;
+    border-radius: 30px;
+  }
+
+  .input-field{
+    color: #3992ff;
+    border-radius: 30px;
+   background-color: rgb(230, 192, 23); 
+  }
+
+
+
+  .record-btn {
+    position: relative;
+    width: 30px;
+    height: 40px;
+
+    border-radius: 20px;
+    border: 2px solid rgb(0, 123, 238);
+    background-color: rgb(203, 230, 255);
+
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #9aceff;
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+
+  .record-btn svg {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+
+    & path {
+      fill: rgb(0, 123, 238);
+    }
+  }
+
+  .record-btn.rec {
+    background-color: rgb(255, 0, 47);
+    border-color: rgb(255, 0, 47);
+    &:hover {
+      background-color: rgb(226, 110, 131);
+      border-color: rgb(226, 110, 131);
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+      background-color: rgb(226, 110, 131);
+      animation: pulse 1.5s linear infinite;
+    }
+    & svg path {
+      fill: white;
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(0.7);
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    100% {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  }
+  .confidence {
+    margin: 0 auto;
+    width: 350px;
+    padding: 10px 20px;
+
+    font-size: 14px;
+    color: black;
+
+    background-color: gray;
+    border-radius: 20px;
+  }
+
+  .speak {
+    position: relative;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+
+    // flex-shrink: 0;
+    // padding: 10px 25px;
+    // font-size: 18px;
+
+    // border-radius: 30px;
+    // border: 2px solid rgb(0, 123, 238);
+    // background-color: rgb(203, 230, 255);
+
+    // transition: background-color 0.3s, transform 0.3s;
+    // cursor: pointer;
+
+    // &:hover {
+    //   color: white;
+    //   background-color: #9aceff;
+    //   transition: all 0.5s;
+    // }
+
+    // &:active {
+    //   transform: scale(0.9);
+    // }
+
+    &.sound {
+      color: #000;
+      background-color: rgb(146, 123, 19);
+      border-color: rgb(146, 123, 19);
+    }
+
+    &.sound:hover {
+      color: #000;
+      background-color: rgb(230, 192, 23);
+      border-color: rgb(230, 192, 23);
+    }
+
+    &.sound::before {
+      // для расходящегося поля вокруг кнопки, типа звук идет
+      content: "";
+      position: absolute;
+      display: block;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      border-radius: 30px;
+      background-color: rgb(230, 192, 23);
+      animation: pulse 1s linear infinite;
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(0.7);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  }
+}
