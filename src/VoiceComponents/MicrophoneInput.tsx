@@ -2,7 +2,7 @@ import { useEffect, useContext, useState } from "react";
 
 import SpeechRecognition, {
   useSpeechRecognition,
-} from "react-speech-recognition";
+} from "react-speech-recognition-mutation";
 
 import { Box, TextField, Tooltip } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
