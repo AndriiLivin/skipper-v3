@@ -152,7 +152,7 @@ function ResponsiveAppBar() {
               variant="h6"
               noWrap
               component="a"
-              href="/"
+              href={import.meta.env.BASE_URL + "/"}
               sx={{
                 mr: 2,
                 display: { xs: "none", md: "flex" },
@@ -224,7 +224,7 @@ function ResponsiveAppBar() {
               noWrap
               component="a"
               // href="#app-bar-with-responsive-menu"
-              href="/"
+              href={import.meta.env.BASE_URL + "/"}
               sx={{
                 mr: 2,
                 display: { xs: "flex", md: "none" },
