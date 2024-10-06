@@ -8,9 +8,17 @@ import { VoiceContext } from "./VoiceContext.ts";
 import { useContext } from "react";
 
 function VoiceButton({ voiceText }) {
-  const [voiceover] = useContext(VoiceContext);
+  let [voiceover] = useContext(VoiceContext);
 
-  if (voiceover === null) return;
+  if (!voiceover) {
+    voiceover = {
+      default: false,
+      lang: "ru-RU",
+      localService: false,
+      name: "Google русский",
+      voiceURI: "Google русский",
+    };
+  }
 
   return (
     <Tooltip title="Озвучить">
@@ -38,4 +46,4 @@ function VoiceButton({ voiceText }) {
     </Tooltip>
   );
 }
-export default VoiceButton
+export default VoiceButton;

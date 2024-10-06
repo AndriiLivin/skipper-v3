@@ -19,8 +19,9 @@ import "./_app-bar.scss";
 
 import VoiceSelection from "../../VoiceComponents/VoiceSelection";
 
-import { defaultProducts } from "../defaultProducts";
 import { IGroup, set } from "../universal";
+
+import { defaultProducts } from "../defaultProducts";
 import { defaultRecipes } from "../defaultRecipes";
 
 const pages = [
@@ -39,6 +40,8 @@ const settings = [
 
   "Clear Product database",
   "Clear Recipe database",
+
+  "Clear ALL",
 ];
 
 function ResponsiveAppBar() {
@@ -89,7 +92,7 @@ function ResponsiveAppBar() {
 
   const clearProductDatabase = () => {
     if (confirm("Please confirm you want to clear Product Database.")) {
-      set<IGroup>("all-recipes", []);
+      set<IGroup>("products", []);
       navigate("/");
     }
   };
@@ -97,6 +100,18 @@ function ResponsiveAppBar() {
   const clearRecipeDatabase = () => {
     if (confirm("Please confirm you want to clear Recipe Database.")) {
       set<IGroup>("all-recipes", []);
+      navigate("/");
+    }
+  };
+
+  const clearAll = () => {
+    if (confirm("Please confirm you want to clear ALL Datas.")) {
+      set<IGroup>("products", []);
+      set<IGroup>("all-recipes", []);
+      set<{ name: string; lang: string; defaultIndex: number }>(
+        "voiceover",
+        []
+      );
       navigate("/");
     }
   };
@@ -288,6 +303,9 @@ function ResponsiveAppBar() {
                       }
                       if (setting === settings[4]) {
                         clearRecipeDatabase();
+                      }
+                      if (setting === settings[5]) {
+                        clearAll();
                       }
                     }}
                   >
